@@ -1,0 +1,26 @@
+{
+  "name": "treis",
+  "version": "1.0.0",
+  "description": "decorates functions with input and output logging",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browser": {
+    "./lib/inspect.js": "./lib/identity.js"
+  },
+  "author": "Raine Virta <raine.virta@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raine/treis"
+  },
+  "keywords": [
+    "trace",
+    "debug"
+  ],
+  "bugs": {
+    "url": "https://github.com/raine/treis/issues"
+  },
+  "homepage": "https://github.com/raine/treis"
+}
