@@ -1,4 +1,3 @@
-var util = require('util');
 var inspect = require('./lib/inspect');
 
 module.exports = function(fn) {
