@@ -1,5 +1,5 @@
 var util = require('util');
-var inspect = require('./lib/inspect')
+var inspect = require('./lib/inspect');
 
 module.exports = function(fn) {
   return function() {
