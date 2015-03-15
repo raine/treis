@@ -2,7 +2,7 @@
 
 decorate functions with input and output logging
 
-can particularly useful when programming point-free style
+can be particularly useful when programming point-free style
 
 ```sh
 $ npm install treis
