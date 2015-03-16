@@ -1,6 +1,8 @@
 # treis
 
-simple debugging tool. decorates functions with input and output logging
+simple debugging tool. decorates functions with
+[colored](https://raw.githubusercontent.com/raine/treis/media/img.png) input
+and output logging
 
 can be particularly useful when programming in point-free style
 
