@@ -10,6 +10,16 @@ can be particularly useful when programming in point-free style
 $ npm install treis
 ```
 
+## usage
+
+### `treis([name], fn)`
+
+returns a decorated version of `fn` that prints the given arguments and
+return value of `fn`
+
+you can optionally label functions by passing a name before the function
+to be decorated
+
 ## example
 
 ```js
