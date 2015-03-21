@@ -17,7 +17,8 @@
   },
   "keywords": [
     "trace",
-    "debug"
+    "debug",
+    "ramda"
   ],
   "bugs": {
     "url": "https://github.com/raine/treis/issues"
