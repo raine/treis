@@ -20,6 +20,8 @@ return value of `fn`
 you can optionally label functions by passing a name before the function
 to be decorated
 
+writes to `stderr`
+
 ## example
 
 ```js
