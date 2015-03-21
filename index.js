@@ -10,10 +10,10 @@ module.exports = function(name, fn) {
     var res = fn.apply(this, arguments);
     var prefix = name ? name + ' ' : '';
 
-    console.log(prefix + inspect({
+    process.stderr.write(prefix + inspect({
       in: arguments,
       out: res
-    }));
+    }) + '\n');
 
     return res;
   }
