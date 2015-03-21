@@ -12,7 +12,8 @@ $ npm install treis
 
 ## usage
 
-### `treis([name], fn)`
+### `treis(fn)`
+### `treis(name, fn)`
 
 returns a decorated version of `fn` that prints the given arguments and
 return value of `fn`
