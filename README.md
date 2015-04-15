@@ -35,15 +35,11 @@ var add = function(a, b) {
   return a + b;
 };
 
-R.reduce(trace(add), 10, numbers); // => 16
+trace('reduce', R.reduce)(trace('add', add), 10, numbers); // => 16
 ```
 
 #### output
 
-```js
-{ in: { '0': 10, '1': 1 }, out: 11 }
-{ in: { '0': 11, '1': 2 }, out: 13 }
-{ in: { '0': 13, '1': 3 }, out: 16 }
-```
+![](https://raw.githubusercontent.com/raine/treis/media/img2.png)
 
 example taken from [ramda docs](http://ramdajs.com/docs)
