@@ -1,5 +1,5 @@
 var inspect = require('./lib/inspect');
-var bold = require('chalk').bold;
+var str2color = require('./lib/str2color');
 
 module.exports = function(name, fn) {
   if (typeof name === 'function') {
@@ -7,9 +7,9 @@ module.exports = function(name, fn) {
     name = null;
   }
 
-  return function() {
+  return function(/* args */) {
     var res = fn.apply(this, arguments);
-    var prefix = name ? bold(name) + ' ' : '';
+    var prefix = name ? str2color(name) + ' ' : '';
 
     process.stderr.write(prefix + inspect({
       in: arguments,
@@ -17,5 +17,5 @@ module.exports = function(name, fn) {
     }) + '\n');
 
     return res;
-  }
+  };
 };
