@@ -1,10 +1,11 @@
 # treis
 
-simple debugging tool. decorates functions with
-[colored](https://raw.githubusercontent.com/raine/treis/media/img.png) input
-and output logging
+it's a simple debugging tool. plug it into any function to see what goes in
+and comes out.
 
 can be particularly useful when programming in point-free style
+
+![](https://raw.githubusercontent.com/raine/treis/media/img.png)
 
 ```sh
 $ npm install treis
