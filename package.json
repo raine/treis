@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browser": {
-    "./lib/inspect.js": "./lib/identity.js"
+    "./lib/inspect.js": "./lib/identity.js",
+    "./lib/str2color.js": "./lib/identity.js"
   },
   "author": "Raine Virta <raine.virta@gmail.com>",
   "license": "ISC",
