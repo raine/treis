@@ -27,6 +27,7 @@ writes to `stderr`
 ## example
 
 ```js
+var R = require('ramda');
 var trace = require('treis');
 
 var numbers = [1, 2, 3];
