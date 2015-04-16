@@ -20,6 +20,10 @@ module.exports = function(name, fn) {
   };
 };
 
+var mapTail = function(fn, arr) {
+  return R.slice(0, 1, arr).concat(R.map(fn, R.tail(arr)));
+};
+
 var repeatStr = R.compose(R.join(''), R.repeat);
 function formatArgsStr(name, fn, args) {
   var fnArgNames = getFnArgs(fn);
@@ -29,9 +33,8 @@ function formatArgsStr(name, fn, args) {
 
   var pairs = R.zipWith(getArgPairs, R.range(0, args.length), args);
   var lines = R.map(R.apply(formatArg), pairs);
-  var indentation = repeatStr(' ', name.length + 1);
-  var indentedTail = R.map(R.concat(indentation), R.tail(lines));
-  return R.join('\n', [ R.head(lines) ].concat(indentedTail) );
+  var space = repeatStr(' ', name.length + 1);
+  return R.join('\n', mapTail(R.concat(space), lines));
 
   function formatArg(name, val) {
     return R.join(': ', [ chalk.green(name), inspect(val) ]);
