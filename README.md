@@ -1,12 +1,13 @@
 # treis
 
-it's a simple debugging tool. plug it into any function to see what goes in
+a simple debugging tool. plug it into any function to see what goes in
 and comes out.
 
 can be particularly useful when programming in point-free style.
 
 ```js
-treis('zipWith', R.zipWith)(repeatAndJoin, ABC, R.range(1, ABC.length + 1));
+/*   without */ R.zipWith(repeatAndJoin, ABC, R.range(1, ABC.length + 1));
+/* decorated */ treis('zipWith', R.zipWith)(repeatAndJoin, ABC, R.range(1, ABC.length + 1));
 ```
 
 ![](https://raw.githubusercontent.com/raine/treis/media/img4.png)
