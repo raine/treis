@@ -1,7 +1,7 @@
 # treis
 
 a simple debugging tool. plug it into any function to see what goes in
-and comes out.
+and comes out, without interfering with the return value.
 
 can be particularly useful when programming in point-free style.
 
