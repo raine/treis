@@ -28,7 +28,7 @@ writes to `stderr`
 
 ```js
 var R = require('ramda');
-var trace = require('treis');
+var treis = require('treis');
 
 var numbers = [1, 2, 3];
 
@@ -36,7 +36,7 @@ function add(a, b) {
   return a + b;
 }
 
-trace('reduce', R.reduce)(trace(add), 10, numbers); // => 16
+treis('reduce', R.reduce)(treis(add), 10, numbers); // => 16
 ```
 
 #### output
