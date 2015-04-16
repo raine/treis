@@ -27,6 +27,6 @@
   "homepage": "https://github.com/raine/treis",
   "dependencies": {
     "chalk": "^1.0.0",
-    "clone": "^1.0.2"
+    "ramda": "^0.13.0"
   }
 }
