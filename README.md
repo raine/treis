@@ -31,15 +31,16 @@ var R = require('ramda');
 var trace = require('treis');
 
 var numbers = [1, 2, 3];
-var add = function(a, b) {
-  return a + b;
-};
 
-trace('reduce', R.reduce)(trace('add', add), 10, numbers); // => 16
+function add(a, b) {
+  return a + b;
+}
+
+trace('reduce', R.reduce)(trace(add), 10, numbers); // => 16
 ```
 
 #### output
 
-![](https://raw.githubusercontent.com/raine/treis/media/img2.png)
+![](https://raw.githubusercontent.com/raine/treis/media/img3.png)
 
 example taken from [ramda docs](http://ramdajs.com/docs)
