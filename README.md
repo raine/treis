@@ -5,7 +5,7 @@ and comes out.
 
 can be particularly useful when programming in point-free style.
 
-![](https://raw.githubusercontent.com/raine/treis/media/img.png)
+![](https://raw.githubusercontent.com/raine/treis/media/img4.png)
 
 ```sh
 $ npm install treis
