@@ -23,9 +23,9 @@ module.exports = function(name, fn) {
   var prefix = name ? str2color(name) + ' ' : '';
 
   return function(/* args */) {
-    console.log(prefix + formatArgsStr(name, fn, arguments));
+    process.stderr.write(prefix + formatArgsStr(name, fn, arguments) + '\n');
     var res = fn.apply(this, arguments);
-    console.log(prefix + '=> ' + indentTailLines(name.length + 4, inspect(res)));
+    process.stderr.write(prefix + '=> ' + indentTailLines(name.length + 4, inspect(res)) + '\n');
     return res;
   };
 };
