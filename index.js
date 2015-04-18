@@ -17,7 +17,7 @@ var indentTailLines = function(n, str) {
 module.exports = function(name, fn) {
   if (typeof name === 'function') {
     fn   = name;
-    name = fn.name || 'ƒ';
+    name = fn.name || 'λ';
   }
 
   var prefix = name ? str2color(name) + ' ' : '';
