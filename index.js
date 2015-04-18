@@ -1,8 +1,9 @@
-var inspect = require('./lib/inspect');
+var R         = require('ramda');
+var chalk     = require('chalk');
+var inspect   = require('./lib/inspect');
 var str2color = require('./lib/str2color');
-var R = require('ramda');
-var chalk = require('chalk');
 var getFnArgs = require('./lib/get-fn-args');
+var getFnName = require('./lib/get-fn-name');
 
 var mapTail = function(fn, arr) {
   return R.slice(0, 1, arr).concat(R.map(fn, R.tail(arr)));
@@ -15,22 +16,21 @@ var indentTailLines = function(n, str) {
 };
 
 module.exports = function(name, fn) {
-  if (typeof name === 'function') {
-    fn   = name;
-    name = fn.name || 'λ';
-  }
-
-  var prefix = name ? str2color(name) + ' ' : '';
-
   return function(/* args */) {
-    process.stderr.write(prefix + formatArgsStr(name, fn, arguments) + '\n');
+    if (typeof name === 'function') {
+      fn   = name;
+      name = getFnName(fn);
+    }
+
+    var prefix = name ? str2color(name) + ' ' : '';
+    process.stderr.write(prefix + formatArgs(name, fn, arguments) + '\n');
     var res = fn.apply(this, arguments);
     process.stderr.write(prefix + '=> ' + indentTailLines(name.length + 4, inspect(res)) + '\n');
     return res;
   };
 };
 
-function formatArgsStr(name, fn, args) {
+function formatArgs(name, fn, args) {
   var fnArgNames = getFnArgs(fn);
   var getArgPairs = function(i, val) {
     return [ fnArgNames[i] || i, val ];
