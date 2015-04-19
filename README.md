@@ -7,11 +7,12 @@ plug it into any function to see what goes in and comes out without interfering 
 can be particularly useful when programming in point-free style.
 
 ```js
-/*   without */ R.zipWith(repeatAndJoin, ABC, R.range(1, ABC.length + 1));
-/* decorated */ treis('zipWith', R.zipWith)(repeatAndJoin, ABC, R.range(1, ABC.length + 1));
+var ABC = ['a', 'b', 'c', 'd', 'e', 'f'];
+var repeatChar = R.compose(R.join(''), R.repeat);
+treis(R.zipWith)(repeatChar, ABC, R.range(1, ABC.length + 1));
 ```
 
-![](https://raw.githubusercontent.com/raine/treis/media/img4.png)
+![](https://raw.githubusercontent.com/raine/treis/media/zipWith.png)
 
 ```sh
 $ npm install treis
@@ -36,17 +37,17 @@ writes to `stderr`
 var R = require('ramda');
 var treis = require('treis');
 
-var numbers = [1, 2, 3];
-
-function add(a, b) {
-  return a + b;
+function greet(name) {
+  return "Hello, " + name + '!';
 }
 
-treis('reduce', R.reduce)(treis(add), 10, numbers); // => 16
+var people = ['John', 'Jill', 'Bruce'];
+var greetPeople = R.compose(R.forEach(console.log), R.map(treis(greet)));
+treis(greetPeople)(people);
 ```
 
 #### output
 
-![](https://raw.githubusercontent.com/raine/treis/media/img3.png)
+![](https://raw.githubusercontent.com/raine/treis/media/greet.png)
 
 example taken from [ramda docs](http://ramdajs.com/docs)
