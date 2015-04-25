@@ -41,7 +41,11 @@ function formatArgs(name, fn, args) {
   var space = strRepeat(' ', name.length + 1);
   return unlines(mapTail(R.concat(space), argLines));
 
-  function formatArg(name, val) {
-    return R.join(': ', [ chalk.green(name), inspect(val) ]);
+  function formatArg(argName, val) {
+    var indentLevel = name.length + argName.length + 3;
+    return R.join(': ', [
+      chalk.green(argName),
+      indentTailLines(indentLevel, inspect(val))
+    ]);
   }
 }
