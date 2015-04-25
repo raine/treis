@@ -51,3 +51,7 @@ treis(greetPeople)(people);
 ![](https://raw.githubusercontent.com/raine/treis/media/greet.png)
 
 example taken from [ramda docs](http://ramdajs.com/docs)
+
+## browser support
+
+works with [browserify](http://browserify.org/)
