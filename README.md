@@ -2,7 +2,7 @@
 
 > a simple tool to debug and observe functions
 
-treis will answer the question "what values is this function called with and what does it return?"
+treis will answer the question "what arguments is this function called with and what does it return?"
 
 can be particularly useful when programming in point-free style.
 
