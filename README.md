@@ -1,8 +1,8 @@
 # treis
 
-a simple debugging tool.
+> a simple tool to debug and observe functions
 
-plug it into any function to see what goes in and comes out without interfering with the return value.
+treis will answer the question "what values is this function called with and what does it return?"
 
 can be particularly useful when programming in point-free style.
 
