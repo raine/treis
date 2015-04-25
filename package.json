@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browser": {
-    "./lib/inspect.js": "./lib/identity.js",
-    "./lib/str2color.js": "./lib/identity.js"
+    "./lib/utils.js": "./lib/utils-browser.js"
   },
   "author": "Raine Virta <raine.virta@gmail.com>",
   "license": "ISC",
@@ -27,6 +26,7 @@
   "homepage": "https://github.com/raine/treis",
   "dependencies": {
     "chalk": "^1.0.0",
-    "ramda": "^0.13.0"
+    "ramda": "^0.13.0",
+    "util-inspect": "^0.1.8"
   }
 }

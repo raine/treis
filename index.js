@@ -1,9 +1,11 @@
 var R         = require('ramda');
 var chalk     = require('chalk');
-var inspect   = require('./lib/inspect');
+var utils     = require('./lib/utils');
 var str2color = require('./lib/str2color');
 var getFnArgs = require('./lib/get-fn-args');
 var getFnName = require('./lib/get-fn-name');
+var inspect   = utils.inspect;
+var print     = utils.print;
 
 var mapTail = function(fn, arr) {
   return R.slice(0, 1, arr).concat(R.map(fn, R.tail(arr)));
@@ -23,9 +25,9 @@ module.exports = function(name, fn) {
     }
 
     var prefix = name ? str2color(name) + ' ' : '';
-    process.stderr.write(prefix + formatArgs(name, fn, arguments) + '\n');
+    print(prefix + formatArgs(name, fn, arguments));
     var res = fn.apply(this, arguments);
-    process.stderr.write(prefix + '=> ' + indentTailLines(name.length + 4, inspect(res)) + '\n');
+    print(prefix + '=> ' + indentTailLines(name.length + 4, inspect(res)));
     return res;
   };
 };
