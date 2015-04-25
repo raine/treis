@@ -1,4 +1,4 @@
-# treis
+# treis [![npm version](https://badge.fury.io/js/treis.svg)](https://www.npmjs.com/package/treis)
 
 > a simple tool to debug and observe functions
 
