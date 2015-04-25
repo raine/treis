@@ -1,6 +1,6 @@
 {
   "name": "treis",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "description": "decorates functions with input and output logging",
   "main": "index.js",
   "scripts": {
