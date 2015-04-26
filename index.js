@@ -35,7 +35,7 @@ module.exports = function(name, fn) {
 function formatArgs(name, fn, args) {
   var fnArgNames = getFnArgs(fn);
   var getArgPairs = function(i, val) {
-    return [ fnArgNames[i] || i, val ];
+    return [ fnArgNames[i] || i.toString(), val ];
   };
 
   var pairs = R.zipWith(getArgPairs, R.range(0, args.length), args);
