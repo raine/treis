@@ -1,7 +1,7 @@
 {
   "name": "treis",
   "version": "2.3.8",
-  "description": "decorates functions with input and output logging",
+  "description": "a simple tool to debug and observe functions",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
