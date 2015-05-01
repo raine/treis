@@ -4,15 +4,17 @@
 
 treis will answer the question "what arguments is this function called with and what does it return?"
 
-can be particularly useful when programming in point-free style.
+can be particularly useful when programming in [point-free style](http://en.wikipedia.org/wiki/Tacit_programming).
 
 ```js
-var ABC = ['a', 'b', 'c', 'd', 'e', 'f'];
-var repeatChar = R.compose(R.join(''), R.repeat);
-treis(R.zipWith)(repeatChar, ABC, R.range(1, ABC.length + 1));
+var {reduce} = require('ramda');
+var product = (a, b) => a * b
+var factorial = reduce(treis(product), 1);
+var arr = [1, 2, 3]
+treis(factorial)(arr);
 ```
 
-![](https://raw.githubusercontent.com/raine/treis/media/zipWith.png)
+![](https://raw.githubusercontent.com/raine/treis/media/factorial.png)
 
 ```sh
 $ npm install treis
