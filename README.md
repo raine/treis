@@ -11,7 +11,7 @@ var {reduce} = require('ramda');
 var product = (a, b) => a * b
 var factorial = reduce(treis(product), 1);
 var arr = [1, 2, 3]
-treis(factorial)(arr);
+treis(factorial)(arr); // 6
 ```
 
 ![](https://raw.githubusercontent.com/raine/treis/media/factorial.png)
