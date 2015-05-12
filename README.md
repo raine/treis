@@ -6,15 +6,7 @@ treis will answer the question "what arguments is this function called with and 
 
 can be particularly useful when programming in [point-free style](http://en.wikipedia.org/wiki/Tacit_programming).
 
-```js
-var {reduce} = require('ramda');
-var product = (a, b) => a * b
-var factorial = reduce(treis(product), 1);
-var arr = [1, 2, 3]
-treis(factorial)(arr); // 6
-```
-
-![](https://raw.githubusercontent.com/raine/treis/media/factorial.png)
+![](https://raw.githubusercontent.com/raine/treis/media/img4.png)
 
 ```sh
 $ npm install treis
