@@ -12,6 +12,8 @@ treis('zipWith', R.zipWith)(repeatAndJoin, ABC, R.range(1, ABC.length + 1));
 
 ![](https://raw.githubusercontent.com/raine/treis/media/img4.png)
 
+## install
+
 ```sh
 $ npm install treis
 ```
