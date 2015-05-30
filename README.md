@@ -55,3 +55,16 @@ example taken from [ramda docs](http://ramdajs.com/docs)
 ## browser support
 
 works with [browserify](http://browserify.org/)
+
+## useful vim mappings
+
+```viml
+" Surround a word with treis()
+nmap <buffer> <Leader>tr ysiwftreis<CR>f(
+
+" Surround a visual selection with treis()
+vmap <buffer> <Leader>tr Sftreis<CR>f(
+
+nmap <buffer> <Leader>tR ysiwfrequire('treis')<CR>f(
+vmap <buffer> <Leader>tR Sfrequire('treis')<CR>f(
+```
