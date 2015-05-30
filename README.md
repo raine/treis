@@ -6,6 +6,10 @@ treis will answer the question "what arguments is this function called with and 
 
 can be particularly useful when programming in [point-free style](http://en.wikipedia.org/wiki/Tacit_programming).
 
+```js
+treis('zipWith', R.zipWith)(repeatAndJoin, ABC, R.range(1, ABC.length + 1));
+```
+
 ![](https://raw.githubusercontent.com/raine/treis/media/img4.png)
 
 ```sh
