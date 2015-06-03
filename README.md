@@ -58,6 +58,8 @@ works with [browserify](http://browserify.org/)
 
 ## useful vim mappings
 
+these require [surround.vim](https://github.com/tpope/vim-surround)
+
 ```viml
 " Surround a word with treis()
 nmap <buffer> <Leader>tr ysiwftreis<CR>f(
