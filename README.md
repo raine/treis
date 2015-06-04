@@ -1,6 +1,6 @@
 # treis [![npm version](https://badge.fury.io/js/treis.svg)](https://www.npmjs.com/package/treis)
 
-> a simple tool to debug and observe functions
+> treɪs | a simple tool to debug and observe functions
 
 treis will answer the question "what arguments is this function called with and what does it return?"
 
