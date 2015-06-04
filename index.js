@@ -24,6 +24,7 @@ module.exports = function(name, fn) {
       name = getFnName(fn);
     }
 
+    name = name.toString();
     var prefix = name ? str2color(name) + ' ' : '';
     print(prefix + formatArgs(name, fn, arguments));
     var res = fn.apply(this, arguments);
