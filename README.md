@@ -1,12 +1,15 @@
-# treis [![npm version](https://badge.fury.io/js/treis.svg)](https://www.npmjs.com/package/treis)
+# treis [![npm version](https://badge.fury.io/js/treis.svg)](http://badge.fury.io/js/treis)
 
 > treɪs | a simple tool to debug and observe functions
 
-treis will answer the question "what arguments is this function called with and what does it return?"
+treis will answer the question "what arguments is this function called with
+and what does it return?".
 
-can be particularly useful when programming in [point-free style](http://en.wikipedia.org/wiki/Tacit_programming).
+It can be particularly useful when programming in [point-free
+style](http://en.wikipedia.org/wiki/Tacit_programming).
 
-if you want to know what a function does in the middle of a `compose` pipeline, just do:
+If you want to know what a function does in the middle of a `compose`
+pipeline, just do:
 
 ```js
 compose(h, treis(g), f);
@@ -23,13 +26,13 @@ $ npm install treis
 ### `treis(fn)`
 ### `treis(name, fn)`
 
-returns a decorated version of `fn` that prints the arguments given to `fn`
+Returns a decorated version of `fn` that prints the arguments given to `fn`
 and its return value.
 
-you can optionally label functions by passing a name before the function
-to be decorated, if not, treis will try to use `fn.name`.
+You can optionally label functions by passing a name before the function to
+be decorated, if not, treis will try to use `fn.name`.
 
-writes to `stderr`
+Writes output to `stderr`.
 
 ## example
 
@@ -50,15 +53,15 @@ treis(greetPeople)(people);
 
 ![](https://raw.githubusercontent.com/raine/treis/media/greet.png)
 
-example taken from [ramda docs](http://ramdajs.com/docs)
+Example taken from [ramda docs](http://ramdajs.com/docs).
 
 ## browser support
 
-works with [browserify](http://browserify.org/)
+Works with [browserify](http://browserify.org/).
 
 ## useful vim mappings
 
-these require [surround.vim](https://github.com/tpope/vim-surround)
+These require [surround.vim](https://github.com/tpope/vim-surround):
 
 ```viml
 " Surround a word with treis()
