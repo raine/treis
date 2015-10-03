@@ -23,13 +23,12 @@ $ npm install treis
 
 ## usage
 
-### `treis(fn)`
-### `treis(name, fn)`
+#### `treis(label?, Function) → Function`
 
 Returns a decorated version of `fn` that prints the arguments given to `fn`
 and its return value.
 
-You can optionally label functions by passing a name before the function to
+You can _optionally_ label functions by passing a name before the function to
 be decorated, if not, treis will try to use `fn.name`.
 
 Writes output to `stderr`.
