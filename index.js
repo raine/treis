@@ -18,19 +18,21 @@ var indentTailLines = function(n, str) {
 };
 
 module.exports = function(name, fn) {
-  return function(/* args */) {
-    if (typeof name === 'function') {
-      fn   = name;
-      name = getFnName(fn);
-    }
+  if (typeof name === 'function') {
+    fn = name;
+    name = null;
+  }
 
+  return R.nAry(fn.length, function(/* args */) {
+    if (name == null) name = getFnName(fn);
     name = name.toString();
+
     var prefix = name ? str2color(name) + ' ' : '';
     print(prefix + formatArgs(name, fn, arguments));
     var res = fn.apply(this, arguments);
     print(prefix + '=> ' + indentTailLines(name.length + 4, inspect(res)));
     return res;
-  };
+  });
 };
 
 function formatArgs(name, fn, args) {
