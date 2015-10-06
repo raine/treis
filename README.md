@@ -36,23 +36,26 @@ Writes output to `stderr`.
 ## example
 
 ```js
-var R = require('ramda');
-var treis = require('treis');
+const R = require('ramda');
+const treis = require('treis');
 
-function greet(name) {
-  return "Hello, " + name + '!';
-}
+//    greet ∷ String → String
+const greet = (name) =>
+  `Hello, ${name}!`
 
-var people = ['John', 'Jill', 'Bruce'];
-var greetPeople = R.compose(R.forEach(console.log), R.map(treis(greet)));
+//    greetPeople ∷ [String] → ()
+const greetPeople =
+  R.compose(console.log,
+            R.join('\n'),
+            R.map(treis(greet)));
+
+const people = ['John', 'Jill', 'Bruce'];
 treis(greetPeople)(people);
 ```
 
 #### output
 
 ![](https://raw.githubusercontent.com/raine/treis/media/greet.png)
-
-Example taken from [ramda docs](http://ramdajs.com/docs).
 
 ## browser support
 
