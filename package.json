@@ -26,7 +26,7 @@
   "homepage": "https://github.com/raine/treis",
   "dependencies": {
     "chalk": "^1.1.1",
-    "ramda": "^0.17.1",
+    "ramda": "^0.18.0",
     "util-inspect": "^0.1.8"
   }
 }
