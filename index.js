@@ -23,7 +23,7 @@ module.exports = function(name, fn) {
     name = null;
   }
 
-  return R.nAry(fn.length, function(/* args */) {
+  return function(/* args */) {
     if (name == null) name = getFnName(fn);
     name = name.toString();
 
@@ -32,7 +32,7 @@ module.exports = function(name, fn) {
     var res = fn.apply(this, arguments);
     print(prefix + '=> ' + indentTailLines(name.length + 4, inspect(res)));
     return res;
-  });
+  };
 };
 
 function formatArgs(name, fn, args) {
