@@ -1,6 +1,6 @@
 {
   "name": "treis",
-  "version": "2.3.14",
+  "version": "2.3.15",
   "description": "a simple tool to debug and observe functions",
   "main": "index.js",
   "scripts": {
