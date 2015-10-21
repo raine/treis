@@ -5,11 +5,10 @@ const treis = require('treis');
 const greet = (name) =>
   `Hello, ${name}!`
 
-//    greetPeople ∷ [String] → ()
+//    greetPeople ∷ [String] → String
 const greetPeople =
-  R.compose(console.log,
-            R.join('\n'),
+  R.compose(R.join('\n'),
             R.map(treis(greet)));
 
 const people = ['John', 'Jill', 'Bruce'];
-treis(greetPeople)(people);
+console.log(treis(greetPeople)(people));
