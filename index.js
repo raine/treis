@@ -17,23 +17,30 @@ var indentTailLines = function(n, str) {
   return unlines(mapTail(R.concat(strRepeat(' ', n)), lines(str)));
 };
 
-module.exports = function(name, fn) {
-  if (typeof name === 'function') {
-    fn = name;
-    name = null;
+var treis = function(print, name, fn) {
+  var fnNameGetter = getFnName()
+
+  return function(name, fn) {
+    if (typeof name === 'function') {
+      fn = name;
+      name = null;
+    }
+
+    return function(/* args */) {
+      if (name == null) name = fnNameGetter(fn);
+      name = name.toString();
+
+      var prefix = name ? str2color(name) + ' ' : '';
+      print(prefix + formatArgs(name, fn, arguments));
+      var res = fn.apply(this, arguments);
+      print(prefix + '=> ' + indentTailLines(name.length + 4, inspect(res)));
+      return res;
+    };
   }
-
-  return function(/* args */) {
-    if (name == null) name = getFnName(fn);
-    name = name.toString();
-
-    var prefix = name ? str2color(name) + ' ' : '';
-    print(prefix + formatArgs(name, fn, arguments));
-    var res = fn.apply(this, arguments);
-    print(prefix + '=> ' + indentTailLines(name.length + 4, inspect(res)));
-    return res;
-  };
 };
+
+module.exports = treis(print)
+module.exports.__init = treis
 
 function formatArgs(name, fn, args) {
   var fnArgNames = getFnArgs(fn);
