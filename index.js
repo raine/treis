@@ -17,7 +17,7 @@ var indentTailLines = function(n, str) {
   return unlines(mapTail(R.concat(strRepeat(' ', n)), lines(str)));
 };
 
-var treis = function(print, name, fn) {
+var treis = function(print) {
   var fnNameGetter = getFnName()
 
   return function(name, fn) {
