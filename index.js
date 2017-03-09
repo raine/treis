@@ -4,6 +4,7 @@ var utils     = require('./lib/utils');
 var str2color = require('./lib/str2color');
 var getFnArgs = require('./lib/get-fn-args');
 var getFnName = require('./lib/get-fn-name');
+var stripAnsi = require('strip-ansi');
 var inspect   = utils.inspect;
 var print     = utils.print;
 
@@ -17,8 +18,9 @@ var indentTailLines = function(n, str) {
   return unlines(mapTail(R.concat(strRepeat(' ', n)), lines(str)));
 };
 
-var treis = function(print) {
-  var fnNameGetter = getFnName()
+var treis = function(__print, color) {
+  var fnNameGetter = getFnName();
+  var print = R.pipe(color ? R.identity : stripAnsi, __print);
 
   return function(name, fn) {
     if (typeof name === 'function') {
@@ -36,10 +38,10 @@ var treis = function(print) {
       print(prefix + '=> ' + indentTailLines(name.length + 4, inspect(res)));
       return res;
     };
-  }
+  };
 };
 
-module.exports = treis(print)
+module.exports = treis(print, true)
 module.exports.__init = treis
 
 function formatArgs(name, fn, args) {
