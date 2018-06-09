@@ -29,5 +29,10 @@
     "ramda": "^0.18.0",
     "strip-ansi": "^3.0.1",
     "util-inspect": "^0.1.8"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "arrowParens": "always"
   }
 }
