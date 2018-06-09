@@ -1,6 +1,10 @@
-var R = require('ramda');
-var treis = require('../');
+const R = require('ramda')
+const treis = require('../')
 
-var ABC = ['a', 'b', 'c', 'd', 'e', 'f'];
-var repeatAndJoin = R.compose(R.join(''), R.repeat);
-treis('zipWith', R.zipWith)(treis(repeatAndJoin), ABC, R.range(1, ABC.length + 1));
+const ABC = ['a', 'b', 'c', 'd', 'e', 'f']
+const repeatAndJoin = R.compose(R.join(''), R.repeat)
+treis('zipWith', R.zipWith)(
+  treis(repeatAndJoin),
+  ABC,
+  R.range(1, ABC.length + 1)
+)
